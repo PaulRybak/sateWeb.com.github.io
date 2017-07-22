@@ -1,97 +1,105 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" href="style.css">
-        <title>Документ без названия</title>
-    </head>
-    <body>
-            <div id="conteinerHeder">
-      		 <div class="menuCompany">
-                 <div class="BlockMenu">
-                    <button class="c-hamburger c-hamburger--htx">
-                    <span></span>
-                    </button>
-                     <h1 class="battonLogo">center of ameracan law</h1>
-                     <div class="telNambers"></div>
-                     <div class="language"><button class="lang"></button></div>
-                 </div>
-             </div>
-       		 <div class="presentSchool">
-                    <div class="title">
-                        <div class="chicagoLaw"></div>
-                        <div class="uniqueSchool"></div>
-                        <div><a href="#" class="button8">зареєструватись</a></div>
-                        <div class="advantages"></div>
-                    </div>               
-                    
-                </div>
-       </div>
-        <div id="conteiner">
-            <div class="font">
-                <div id="globalInfo">
-                    <div class="topLeft"></div>
-                    <div class="topRight"></div>
-                    <div class="footLeft"></div>
-                    <div class="footRight"></div>
-                    <div class="Logo">
-                        <img src="img/centralLogo.png" class="centralLogo"> 
-                        <p>наш досвід</p>
-                    </div>
-                    <div class="slidersBlock"></div>
-                    <div class="cours"></div>
-                    <div class="teachers">
-                        <div class="teacher1"></div>                  
-                        <div class="teacher2"></div>                  
-                        <div class="teacher3"></div>                  
-                        <div class="teacher4"></div>                  
-                    </div>
-                    <div class="reviews">
-                        <div class="circleImg"></div>                   
-                    </div>
-                    <div class="USAdreams">
-                        <img src="img/backgroundLedy.png" class="backgroundLedy">
-                    </div>
-                    <div class="aboutUs">
-                        <div class="pressInfo"></div>
-                    </div>
-                    <div class="organizTraining"></div>
-                    <div class="teaching">
-                        <div class="redLine"></div>
-                        <div class="rulesBlue"></div>
-                        <div class="rulesRed"></div>
-                        <div class="greyLines"></div>
-                        <div class="learns"></div>
-                    </div>
-                    <div class="partners"><div class="ourContacts"></div></div>
-                    <div class="contacts"></div>
-                </div>
-                <footer class="lastBlock">
-                    <div class="socialNet"></div>
-                    <div class="footerlogo"></div>
-                </footer>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<link href="img/reebok-delta-stacked-logo_360_white.png" rel="shortcut icon" type="images/x-icon" />
+	<title>Reebok</title>
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700&amp;subset=cyrillic-ext" rel="stylesheet">
+    <script src="js/jquery-1.7.2.min.js"></script>
+	<link rel="stylesheet" href="global.css">
+</head>
+<body>
+    <H1>Reebok</H1>
+    <div id="slider-wrap">
+	<div id="slider">
+		<div class="slide"><img src="img/DSC_2820.png" width="600" height="360">
+            <div class="text"><span>ACTION!</span></span></span><br><p>Buty Reebok Robocze. Z blacha . Rozmiar 8.5 (42.5)Uzywane kilkakrotnie.Mozna sprawdzic po podeszwie.Zaiteresowanych prosze o kontakt.</p>
+                <span>100zl.</span>
             </div>
         </div>
-               <script>
-   (function() {
+		<div class="slide"><img src="img/DSC_2824.png" width="600" height="360">
+             <div class="text"><span>ACTION!</span></span><br><p>Buty Reebok Robocze. Z blacha . Rozmiar 8.5 (42.5)Uzywane kilkakrotnie.Mozna sprawdzic po podeszwie.Zaiteresowanych prosze o kontakt.</p>
+                <span>100zl.</span>
+            </div>
+        </div>
+		<div class="slide"><img src="img/DSC_2825.png" width="600" height="360">
+            <div class="text"><span>ACTION!</span><br><p>Buty Reebok Robocze. Z blacha . Rozmiar 8.5 (42.5)Uzywane kilkakrotnie.Mozna sprawdzic po podeszwie.Zaiteresowanych prosze o kontakt.</p>
+                <span>100zl.</span>
+            </div>
+        </div>
+		<div class="slide"><img src="img/DSC_2821.png" width="600" height="360">
+            <div class="text"><span>ACTION!</span><br><p>Buty Reebok Robocze. Z blacha . Rozmiar 8.5 (42.5)Uzywane kilkakrotnie.Mozna sprawdzic po podeszwie.Zaiteresowanych prosze o kontakt.</p>
+                <span>100zl.</span>
+            </div>
+        </div>    
+	</div>
+</div>
+</body>
+<script>
+(function ($) {
+var hwSlideSpeed = 200;
+var hwTimeOut = 3000;
+var hwNeedLinks = true;
 
-  "use strict";
+$(document).ready(function(e) {
+	$('.slide').css(
+		{"position" : "absolute",
+		 "top":'0', "left": '0'}).hide().eq(0).show();
+	var slideNum = 0;
+	var slideTime;
+	slideCount = $("#slider .slide").size();
+	var animSlide = function(arrow){
+		clearTimeout(slideTime);
+		$('.slide').eq(slideNum).fadeOut(hwSlideSpeed);
+		if(arrow == "next"){
+			if(slideNum == (slideCount-1)){slideNum=0;}
+			else{slideNum++}
+			}
+		else if(arrow == "prew")
+		{
+			if(slideNum == 0){slideNum=slideCount-1;}
+			else{slideNum-=1}
+		}
+		else{
+			slideNum = arrow;
+			}
+		$('.slide').eq(slideNum).fadeIn(hwSlideSpeed, rotator);
+		$(".control-slide.active").removeClass("active");
+		$('.control-slide').eq(slideNum).addClass('active');
+		}
+if(hwNeedLinks){
+var $linkArrow = $('<a id="prewbutton" href="#">&lt;</a><a id="nextbutton" href="#">&gt;</a>')
+	.prependTo('#slider');		
+	$('#nextbutton').click(function(){
+		animSlide("next");
+		return false;
+		})
+	$('#prewbutton').click(function(){
+		animSlide("prew");
+		return false;
+		})
+}
+	var $adderSpan = '';
+	$('.slide').each(function(index) {
+			$adderSpan += '<span class = "control-slide">' + index + '</span>';
+		});
+	$('<div class ="sli-links">' + $adderSpan +'</div>').appendTo('#slider-wrap');
+	$(".control-slide:first").addClass("active");
+	$('.control-slide').click(function(){
+	var goToNum = parseFloat($(this).text());
+	animSlide(goToNum);
+	});
+	var pause = false;
+	var rotator = function(){
+			if(!pause){slideTime = setTimeout(function(){animSlide('next')}, hwTimeOut);}
+			}
+	$('#slider-wrap').hover(	
+		function(){clearTimeout(slideTime); pause = true;},
+		function(){pause = false; rotator();
+		});
+	rotator();
+});
+})(jQuery);
 
-  var toggles = document.querySelectorAll(".c-hamburger");
-
-  for (var i = toggles.length - 1; i >= 0; i--) {
-    var toggle = toggles[i];
-    toggleHandler(toggle);
-  };
-
-  function toggleHandler(toggle) {
-    toggle.addEventListener( "click", function(e) {
-      e.preventDefault();
-      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
-    });
-  }
-
-})();
-    </script>
-    </body>
-</html> 
+</script>
+</html>
